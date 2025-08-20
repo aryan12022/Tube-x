@@ -10,6 +10,7 @@ const getAllVideos = asyncHandler(async (req, res) => {
     const { page = 1, limit = 10, query, sortBy, sortType, userId } = req.query;
 
     // Validate userId
+    console.log("userId received:", userId);
     if (!userId || !mongoose.isValidObjectId(userId)) {
         throw new ApiError(401, 'Invalid userId');
     }
